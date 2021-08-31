@@ -1,0 +1,142 @@
+@import "common/commonStyles/commonStyles";
+
+$CN: temp-comp-ft-item;
+
+// Стили главной обёртки
+.#{$CN} {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    user-select: none;
+}
+
+
+// Обёртка с деталями элемента
+.#{$CN}__inner {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    color: var(--text-color);
+    padding: 4px 10px 4px 0;
+
+    &:hover {
+        .#{$CN}__right-part {
+            display: flex;
+        }
+    }
+}
+
+
+// Общие стили для всех кнопок
+.#{$CN}__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: var(--radius-2);
+    transition: background-color .2s;
+
+    &:hover {
+        transition: background-color .1s;
+        background-color: var(--bg-color-2);
+
+        svg {
+            fill: var(--text-color);
+            opacity: 1;
+        }
+    }
+
+    &:focus {
+        // Включение стандартной фокусировки
+        @include focus;
+    }
+
+    svg {
+        fill: var(--text-color);
+        opacity: 0.85;
+    }
+}
+
+
+// Кнопка-треугольник
+.#{$CN}__btn-triangle {
+    width: 18px;
+    min-width: 18px;
+    height: 18px;
+}
+// Кнопка-треугольник при открытой папки
+.#{$CN}__btn-triangle--open {
+    transform: rotate(90deg);
+}
+// Кнопка-треугольник невидима если нет вложенных элементов
+.#{$CN}__btn-triangle--invisible {
+    visibility: hidden;
+}
+.#{$CN}__btn-triangle--for-file {
+    width: 20px;
+    min-width: 20px;
+}
+
+
+// Значёк папки
+.#{$CN}__folder-sign {
+    width: 15px;
+    min-width: 15px;
+    margin: 2px 5px 0 2px;
+}
+
+.#{$CN}__circles {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 93px;
+}
+.#{$CN}__circle {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    margin: auto;
+}
+.#{$CN}__circle--visible {
+    background-color: var(--bg-color-2);
+}
+
+.#{$CN}__item-name {
+    position: relative;
+}
+
+
+// Обёртка правых кнопок
+.#{$CN}__right-part {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+    height: 100%;
+    background-color: var(--bg-color);
+    padding-left: 1px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -30px;
+        width: 30px;
+        background: linear-gradient(90deg, transparent, var(--bg-color));
+    }
+}
+
+.#{$CN}__right-btn {
+    flex-grow: 1;
+    padding: 1px 8px;
+}
+.#{$CN}__right-btn--invisible {
+    visibility: hidden;
+}

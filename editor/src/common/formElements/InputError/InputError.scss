@@ -1,0 +1,21 @@
+$CN: input-error;
+
+// Обёртка уведомления
+.#{$CN} {
+    display: flex;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    color: hsl(354%, 100%, 44%);
+}
+
+// Значёк
+.#{$CN}__icon {
+    min-width: 13px;
+    margin-top: 0.3rem;
+    margin-right: 4px;
+}
+
+// Абзац сообщения
+.#{$CN}__paragraph {
+
+}

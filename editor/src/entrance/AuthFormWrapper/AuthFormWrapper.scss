@@ -1,0 +1,17 @@
+@import "../../common/commonStyles/commonStyles";
+
+$CN: auth-form-wrapper;
+
+.#{$CN} {
+    width: 410px;
+    box-sizing: border-box;
+    background-color: var(--bg-color);
+
+    padding: 4rem 6rem;
+    border-radius: var(--radius-2);
+    @include big-shadow;
+}
+
+.#{$CN}__logo-wrapper {
+    margin-bottom: 1.5rem;
+}

@@ -1,0 +1,17 @@
+$CN: left-part-2;
+
+.#{$CN} {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    height: 100px;
+}
+
+.#{$CN}__top {
+    flex-grow: 1;
+    overflow: auto;
+    padding: 1.5rem 2rem;
+}
+.#{$CN}__bottom {
+
+}

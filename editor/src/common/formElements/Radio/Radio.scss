@@ -1,0 +1,76 @@
+@import "../../commonStyles/commonStyles";
+
+
+$CN: radio;
+
+// Оригинальный флаг
+.#{$CN}-input {
+    position: absolute;
+    opacity: 0;
+}
+
+// Вид label в зависимости от размера
+.#{$CN}-label {
+    position: relative;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    user-select: none;
+    cursor: pointer;
+    transition: opacity .3s;
+    margin-left: 19px;
+}
+
+// Общие стили псевдофлагов
+.#{$CN}-label {
+    &:before, &:after {
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+    }
+    &:before {
+        top: 1px;
+        width: 15px;
+        height: 15px;
+        left: -19px;
+        transition: background-color .2s;
+    }
+    &:after {
+        width: 5px;
+        height: 5px;
+        left: -16px;
+        top: 4px;
+        margin: 2px 0 0 2px;
+        background-color: white;
+        box-shadow: 0 1.5px 0 rgba(0, 52, 108, .2);
+        transition: opacity .1s, transform .1s;
+        transform: scale(0);
+    }
+}
+
+// Неотмеченный before
+.#{$CN}-input:not(checked) + .#{$CN}-label {
+    &::before {
+        background-color: var(--button-color-hover);
+    }
+}
+// Отмеченный before
+.#{$CN}-input:checked + .#{$CN}-label {
+    &::before {
+        background-color: var(--accent-color);
+    }
+    &::after {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+// Фокусировка
+.#{$CN}-input:focus + .#{$CN}-label:before {
+    // Стандартная фокусировка
+    @include focus
+}
+
+// Заблокированное поле
+.#{$CN}-input:disabled + .#{$CN}-label {
+    opacity: .5;
+}

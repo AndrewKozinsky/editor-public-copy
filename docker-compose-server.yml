@@ -1,0 +1,56 @@
+version: "3.3"
+
+services:
+  # Nginx
+  nginx:
+    image: nginx:1.19.7-alpine
+    container_name: editor-nginx
+    environment:
+      - VIRTUAL_HOST=editorium.net
+      - LETSENCRYPT_HOST=editorium.net
+    depends_on:
+      - editor
+      - nest
+      - postgres
+    volumes:
+      - ./nginx/nginx.conf.server:/etc/nginx/nginx.conf
+
+  # Клиентская часть редактора
+  editor:
+    build:
+      context: ./editor
+      dockerfile: Dockerfile.prod
+    container_name: editor-editor
+    command: serve /app/dist -l 3000
+    restart: unless-stopped
+
+  # API редактора (Nest)
+  nest:
+    build:
+      context: ./nestApi
+      dockerfile: Dockerfile.prod
+    container_name: editor-nest
+    command: npm run start:prod
+    restart: unless-stopped
+    environment:
+      - MODE=production
+      - PORT=3002
+    depends_on:
+      - postgres
+
+  # Postgres
+  postgres:
+    image: postgres:13-alpine
+    container_name: editor-postgres
+    restart: unless-stopped
+    volumes:
+      - postgres:/var/lib/postgresql/data
+
+
+volumes:
+  postgres:
+
+networks:
+  default:
+    external:
+      name: nginx-proxy

@@ -1,0 +1,102 @@
+@import "../../commonStyles/commonStyles";
+
+$CN: btn;
+
+.#{$CN} {
+    text-align: left;
+    cursor: pointer;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    padding: 4px 11px;
+    border: none;
+    border-radius: var(--radius-2);
+    transition: background-color .2s;
+
+    &:hover {
+        transition: background-color .1s;
+    }
+
+    &:focus {
+        // Включение стандартной фокусировки
+        @include focus
+    }
+
+    &:disabled {
+        opacity: .6;
+        cursor: default;
+    }
+}
+
+
+// Тип кнопки.
+// standard (стандартная кнопка), onlyIcon (только значёк).
+/*.#{$CN}--standard-view {
+
+}*/
+
+
+// Цвет кнопки.
+// base (стандартный цвет), accent (акцентный цвет)
+.#{$CN}--base-color {
+    color: var(--text-color);
+    background-color: var(--button-color);
+    transition: background-color .2s;
+
+    &:hover {
+        background-color: var(--button-color-hover);
+    }
+
+    &:disabled:hover {
+        background-color: var(--button-color);
+    }
+}
+.#{$CN}--accent-color {
+    color: white;
+    background-color: var(--accent-color);
+
+    &:hover {
+        background-color: var(--accent-color-hover);
+    }
+
+    &:disabled {
+        color: var(--text-color);
+        background-color: var(--button-color);
+    }
+}
+
+
+// Загрузчик
+$loaderCN: btn-loader;
+
+.#{$loaderCN} {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    vertical-align: -2px;
+    margin-right: 4px;
+}
+
+
+// Значёк
+.#{$CN}__icon {
+    margin-right: .4rem;
+    margin-bottom: -2px;
+}
+
+// Если кнопка должна быть блочным элементом на всю ширину
+.#{$CN}--block {
+    display: block;
+    width: 100%;
+}
+
+// If button must be big
+.#{$CN}--big {
+    padding: 11px 17px;
+}
+
+.#{$CN}--center {
+    text-align: center;
+}
+.#{$CN}--right {
+    text-align: right;
+}

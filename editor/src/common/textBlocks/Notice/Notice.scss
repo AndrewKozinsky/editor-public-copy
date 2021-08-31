@@ -1,0 +1,21 @@
+$CN: notice;
+
+// Обёртка уведомления
+.#{$CN} {
+    display: flex;
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+}
+
+.#{$CN}--bg {
+    background-color: var(--text-input-color);
+    padding: 12px 15px;
+    border-radius: var(--radius-2);
+}
+
+// Значёк
+.#{$CN}__icon {
+    min-width: 18px;
+    margin-top: 1px;
+    margin-right: 8px;
+}

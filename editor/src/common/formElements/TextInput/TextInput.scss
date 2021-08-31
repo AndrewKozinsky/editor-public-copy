@@ -1,0 +1,40 @@
+@import "../../commonStyles/commonStyles";
+
+
+$CN: text-input;
+
+.#{$CN} {
+    display: block;
+    width: 100%;
+    font-family: 'SF UI Display', sans-serif;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    padding: .4rem 0.8rem;
+    color: var(--text-color);
+    box-sizing: border-box;
+
+    background-color: var(--text-input-color);
+    border: none;
+    border-radius: var(--radius);
+    transition: opacity .3s;
+
+    &::placeholder {
+        font-size: 1.3rem;
+        line-height: 1.7rem;
+        color: var(--text-placeholder-color);
+    }
+
+    &:focus {
+        // Включение стандартной фокусировки
+        @include focus
+    }
+
+    &:disabled {
+        opacity: .5;
+    }
+}
+
+// Задание максимальной ширины
+.#{$CN}--maxWidth-250 {
+    max-width: 250px;
+}

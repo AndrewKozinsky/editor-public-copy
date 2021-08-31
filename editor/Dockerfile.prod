@@ -1,0 +1,16 @@
+FROM node:14.15.3-alpine3.12
+WORKDIR /app
+COPY package*.json ./
+
+# Поставить все пакеты из package.json
+# Поставить сервер
+RUN npm install && npm install -g serve
+
+# Скопировать все остальные файлы
+COPY . .
+
+# Скопировать файл serve.json
+COPY ./serve.json /app/dist
+
+# Собрать пакет
+RUN npm run build

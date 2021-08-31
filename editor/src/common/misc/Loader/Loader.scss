@@ -1,0 +1,24 @@
+
+.loader-wrapper {
+    width: 30px;
+    height: 30px;
+}
+
+.animate-loader {
+    animation: spin 1.25s linear infinite;
+
+    circle {
+        stroke: var(--text-color);
+    }
+
+    path {
+        fill: var(--bg-color);
+        opacity: .8;
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

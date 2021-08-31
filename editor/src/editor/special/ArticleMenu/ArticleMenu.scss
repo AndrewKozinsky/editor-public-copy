@@ -1,0 +1,65 @@
+@import "../../../common/commonStyles/commonStyles";
+
+$menuWrapperCN: article-menu-wrapper;
+$btnCN: article-menu-button;
+$menuCN: article-menu;
+
+
+.#{$menuWrapperCN} {
+    position: relative;
+
+    display: flex;
+
+    &:hover {
+        .#{$menuCN} {
+            display: flex;
+        }
+
+        .#{$btnCN} {
+            background-color: var(--bg-color);
+        }
+    }
+}
+
+.#{$btnCN} {
+    position: relative;
+    z-index: 2;
+    text-align: left;
+    cursor: pointer;
+    background-color: var(--bg-color-2);
+    padding: 0 10px;
+    border: none;
+
+    &:hover {
+        background-color: var(--bg-color);
+
+        svg {
+            fill-opacity: 1;
+        }
+    }
+
+    svg {
+        fill-opacity: .8;
+    }
+}
+
+
+.#{$menuCN} {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 100%;
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    width: 200px;
+    background-color: var(--bg-color);
+    padding: 15px;
+    border-radius: 0 0 var(--radius) var(--radius);
+    @include big-shadow;
+}
+.#{$menuCN}__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}

@@ -1,0 +1,36 @@
+@import "../../commonStyles/commonStyles";
+
+$CN: modal;
+
+.#{$CN}__outer-wrapper {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: hsla(var(--text-color-naked), 40%);
+}
+
+.#{$CN} {
+    position: relative;
+    width: 320px;
+    background-color: var(--bg-color);
+    padding: 3.5rem 2rem 2rem 2rem;
+    border-radius: var(--radius-2);
+    //@include big-shadow;
+}
+
+.#{$CN}__close-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    line-height: 0;
+    padding: 5px;
+    border-radius: 50%;
+
+    .btn__icon {
+        margin: 0;
+    }
+}

@@ -1,0 +1,50 @@
+@import "common/commonStyles/commonStyles";
+
+$CN: items-list;
+
+.#{$CN} {}
+
+$item: #{$CN}__item;
+
+.#{$item} {
+    display: block;
+    width: 100%;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    color: var(--text-color);
+    text-align: left;
+    cursor: pointer;
+    background-color: transparent;
+
+    padding: 4px 11px;
+    border: none;
+    border-radius: var(--radius);
+    transition: background-color .1s;
+
+    &:hover {
+        background-color: var(--bg-color-2);
+        transition: background-color .1s;
+    }
+
+    &:focus {
+        // Включение стандартной фокусировки
+        @include focus;
+    }
+
+    &:disabled {
+        opacity: .5;
+        cursor: default;
+    }
+}
+
+
+// Активная кнопка
+.#{$item}--active {
+    color: white;
+    cursor: default;
+    background-color: var(--accent-color);
+
+    &:hover {
+        background-color: var(--accent-color);
+    }
+}

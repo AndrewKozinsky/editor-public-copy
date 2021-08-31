@@ -1,0 +1,6 @@
+Объект события Реакта
+React.BaseSyntheticEvent
+
+??
+FormEvent<HTMLFormElement>
+React.FormEvent<HTMLFormElement>

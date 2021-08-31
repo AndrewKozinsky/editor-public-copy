@@ -1,0 +1,22 @@
+$CN: icon;
+
+// Чёрная заливка
+.#{$CN}-black-fill {
+    fill: var(--text-color);
+}
+// Тёмная заливка
+.#{$CN}-icon-fill {
+    fill: var(--text-color);
+    opacity: .9;
+}
+
+// Белая заливка
+.#{$CN}-white-fill {
+    fill: white;
+}
+
+// Чёрная обводка
+.#{$CN}-icon-stroke {
+    stroke: var(--text-color);
+    opacity: .85;
+}

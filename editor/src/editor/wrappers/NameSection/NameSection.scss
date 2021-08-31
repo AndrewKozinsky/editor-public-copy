@@ -1,0 +1,46 @@
+$CN: name-section;
+
+.#{$CN} {}
+
+.#{$CN}__header {
+    position: relative;
+    font-weight: bold;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: var(--button-color);
+    }
+}
+
+// Большой компонент
+.#{$CN}__header--type1 {
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    margin-bottom: 0.8rem;
+
+    &::before { top: 12px; }
+}
+
+// Мелкий компонент
+.#{$CN}__header--type2 {
+    font-size: 1.5rem;
+    line-height: 2.1rem;
+    margin-bottom: 0.8rem;
+
+    &::before { top: 11px; }
+}
+.#{$CN}__header-bg {
+    position: relative;
+    background-color: var(--bg-color);
+
+    &::after {
+        content: '';
+        display: inline-block;
+        width: 5px;
+        background-color: dodgerblue;
+    }
+}

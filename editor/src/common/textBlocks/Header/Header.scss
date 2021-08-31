@@ -1,0 +1,17 @@
+$CN: header;
+
+.#{$CN} {
+    font-weight: bold;
+}
+
+// Тип h1
+.#{$CN}--h1 {
+    font-size: 2.6rem;
+    line-height: 3.6rem;
+}
+
+// Тип h2
+.#{$CN}--h2 {
+    font-size: 2.2rem;
+    line-height: 2.8rem;
+}

@@ -1,0 +1,61 @@
+@import "../../commonStyles/commonStyles";
+
+// ---------------------------------------------------------------
+
+$wrapper-class: select-input-wrapper;
+
+// Обёртка выпадающего списка
+.#{$wrapper-class} {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius);
+}
+
+.#{$wrapper-class}__tip {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 16px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--text-placeholder-color);
+}
+
+// Класс добавляемый к обёртке при фокусировке на выпадающем списке
+.#{$wrapper-class}--focus {
+    @include focus;
+
+    .#{$wrapper-class}__tip {
+        background-color: var(--accent-color);
+    }
+
+    svg {
+        stroke: white;
+    }
+}
+
+// ---------------------------------------------------------------
+
+$select-class: select-input;
+
+.#{$select-class} {
+    display: block;
+    width: 100%;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    color: var(--text-color);
+    appearance: none;
+
+    background-color: var(--button-color);
+    padding: .4rem 0.7rem;
+    border: none;
+    border-radius: var(--radius);
+    transition: opacity .3s;
+
+    &:disabled {
+        opacity: .5;
+    }
+}

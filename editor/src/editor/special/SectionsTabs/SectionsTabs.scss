@@ -1,0 +1,7 @@
+$CN: section-tabs;
+
+.#{$CN} {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--bg-color-2);
+}

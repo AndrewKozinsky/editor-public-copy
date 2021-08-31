@@ -1,0 +1,66 @@
+
+$CN: wrapper;
+
+.#{$CN} {}
+
+// Классы дающие выравнивание
+.#{$CN}--align-center {
+    display: flex;
+    justify-content: center;
+}
+.#{$CN}--align-right {
+    display: flex;
+    justify-content: flex-end;
+}
+.#{$CN}--align-justify {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+// Классы дающие верний оступ
+.#{$CN}--t5 {
+    margin-top: .6rem;
+}
+
+.#{$CN}--t10 {
+    margin-top: 1rem;
+}
+
+.#{$CN}--t15 {
+    margin-top: 1.5rem;
+}
+
+.#{$CN}--t20 {
+    margin-top: 2rem;
+}
+
+.#{$CN}--t25 {
+    margin-top: 2.5rem;
+}
+
+.#{$CN}--t30 {
+    margin-top: 3rem;
+}
+
+
+// Классы дающие нижний оступ
+.#{$CN}--b5 {
+    margin-bottom: .5rem;
+}
+.#{$CN}--b10 {
+    margin-bottom: 1rem;
+}
+.#{$CN}--b15 {
+    margin-bottom: 1.5rem;
+}
+.#{$CN}--b25 {
+    margin-bottom: 2.5rem;
+}
+
+
+// Класс дающий отступ между элементами обёртки
+.#{$CN}--gap10 {
+    display: flex;
+    gap: 10px;
+}
